@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let customername = prompt("enter customername");
+    let IDname = prompt("enter IDname");
+    let birthday = prompt("enter birthday");
+    let email = prompt("enter email");
+    let address = prompt("enter address");
+    let customerType = prompt("enter customername");
+    let discount = prompt("enter discount");
+    let QuantityIncluded = prompt("enter Quantity Included");
+    let rentDays = prompt("enter rentDays");
+    let serviceType = prompt("enter serviceType");
+    let roomType = prompt("enter roomType");
+    let totalpays = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount)/100);
+    // Hiển thị kết quả
+    alert("Information of customer: \n" +
+        "name: " + customername +
+        "\nIDname : " + IDname +
+        "\nbirthday: " + birthday +
+        "\nemail: " + email +
+        "\naddress: " + address +
+        "\ncustomertype: " + customerType +
+        "\nquantityIncluded: " + QuantityIncluded +
+        "\nrentDays: " + rentDays +
+        "\nserviceType: " + serviceType +
+        "\nrommType: " + roomType +
+        "\ntotalpays: " + totalpays);
+</script>
+</body>
+</html>
