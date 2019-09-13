@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let year = parseInt(prompt("enter year"));
+    let isleapyear = false;
+    let chiahet4 = year % 4 === 0;
+    if (chiahet4) {
+        let chiahet100 = year % 100 === 0;
+        if (chiahet100) {
+            let chiahet400 = year % 400 === 0;
+            if (chiahet400) {
+                isleapyear = true;
+            }
+        } else isleapyear = true;
+    }
+    if (isleapyear){
+        alert(year + "isleapyear");
+    }
+    else alert(year + "NOTisleapyear");
+</script>
+</body>
+</html>
