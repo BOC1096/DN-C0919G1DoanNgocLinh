@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let checkvalidate = false;
+    let email;
+    let birthday;
+    let idname;
+    let quantityIncluded;
+    let rentDays;
+    let discount;
+    let address = prompt("enter address");
+    let customerType = prompt("enter customerType");
+    let roomType = prompt("enter roomType");
+    let serviceType = prompt("enter serviceType");
+
+
+    do {
+        checkvalidate = false;
+        idname = prompt("enter IDname");
+        let num = idname.length;
+        if (num !== 9) {
+            alert("idname is invalided!!! please try again: ");
+            continue;
+        }
+        let id = idname.substring(0, 9);
+        if (!isNaN(id)) {
+            id = Number.parseFloat(id);
+            if (Number.isInteger(id)) {
+                checkvalidate = true;
+            }
+        }
+    } while (!checkvalidate);
+
+    // let customername = prompt("enter customername");
+
+    do {
+        checkvalidate = false;
+        birthday = prompt("enter birthday (dd/mm/yyyy): ");
+        if (birthday.charAt(2) !== "/" || birthday.charAt(5) !== "/") {
+            alert("birthday invalided!!! please tr again");
+            continue;
+        }
+        let day = birthday.substring(0, 2);
+        let month = birthday.substring(3, 5);
+        let year = birthday.substring(6, 10);
+        if (!isNaN(day) && !isNaN(month) && !isNaN(year)) {
+            day = Number.parseFloat(day);
+            month = Number.parseFloat(month);
+            year = Number.parseFloat(year);
+            if (Number.isInteger(day) && Number.isInteger(day) && Number.isInteger(day)) {
+                if (day > 0 && day < 32 && month > 0 && month < 13 && year > 1900 && year < 2020) {
+                    checkvalidate = true;
+                }
+            }
+        }
+        if (!checkvalidate) {
+            alert("birthday invalided!!! please tr again");
+        }
+    } while (!checkvalidate);
+    do {
+        checkvalidate = true;
+        email = prompt("enter email");
+        let countAt = 0;
+        let countDoc = 0;
+        for (i = 0; i < email.length; i++) {
+            if (email.charAt(i) === "@") {
+                countAt++;
+            }
+            if (email.charAt(i) === ".") {
+                countDoc++;
+            }
+        }
+        if (countAt !== 1 || countDoc < 1) {
+            checkvalidate = false;
+            alert("email invalided!!! please try again");
+        } else {
+            checkvalidate = true;
+        }
+    }
+    while (!checkvalidate);
+
+    function checkinterger(n) {
+        if (!isNaN(n)) {
+            n = Number.parseFloat(n);
+            if (Number.isInteger(n)) {
+                return true;
+            }
+        }
+    }
+
+    do {
+        checkvalidate = false;
+        discount = prompt("enter discount");
+        if (!checkinterger(discount)) {
+            alert("discount invalided !!! please try again:");
+            continue;
+        } else {
+            checkvalidate = true;
+        }
+    }
+    while (!checkvalidate);
+
+    do {
+        checkvalidate = false;
+        quantityIncluded = prompt("enter Quantity Included");
+        if (!checkinterger(quantityIncluded)) {
+            alert("quantityIncluded invalided !!! please try again:");
+            continue;
+        } else {
+            checkvalidate = true;
+        }
+    }
+    while (!checkvalidate);
+
+    do {
+        checkvalidate = false;
+        rentDays = prompt("enter rentDays");
+        if (!checkinterger(rentDays)) {
+            alert("rentDays invalided !!! please try again:");
+            continue;
+        } else {
+            checkvalidate = true;
+        }
+    }
+    while (!checkvalidate);
+    // do {
+    //     checkvalidate = false;
+    //     discount = prompt("enter discount: ");
+    //     if (!isNaN(discount)) {
+    //         discount = Number.parseFloat(discount);    //cach khac
+    //         if (Number.isInteger(discount)) {
+    //             checkvalidate = true;
+    //         }
+    //     } else alert("discount invalided !!! please try again:");
+    // } while (!checkvalidate);
+
+    let totalpays = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount) / 100);
+
+    alert("Information of customer: \n" +
+        // "name: " + customername +
+        "\nIDname : " + idname +
+        "\nbirthday: " + birthday +
+        "\nemail: " + email +
+        "\naddress: " + address +
+        "\nserviceType: " + serviceType +
+        "\nrommType: " + roomType +
+        "\ncustomertype: " + customerType +
+        "\ndiscount: " + discount +
+        "\nquantityIncluded: " + quantityIncluded +
+        "\nrentDays: " + rentDays +
+        "\ntotalpays: " + totalpays);
+</script>
+</body>
+</html>
