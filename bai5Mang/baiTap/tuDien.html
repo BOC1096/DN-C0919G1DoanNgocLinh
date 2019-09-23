@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tuDien</title>
+</head>
+<body>
+<form>
+    <h3>TU DIEN</h3>
+    <input type="text" id="eng" value="eng" />
+    <input type="button" value="search" onclick="search()"/>
+</form>
+<script>
+    let eng = ["anylist", "black", "car", "day"];
+    let vie = ["phân tích", "đen", "xe hơi", "ngày"];
+    let anh = document.getElementById("eng");
+
+    function search() {
+        let check = false;
+        for (let i = 0; i < eng.length; i++) {
+            if (anh.value === eng[i]) {
+                alert(vie[i]);
+                check = true;
+            }
+        }
+        if (!check) {
+            alert("not found");
+        }
+    }
+
+</script>
+</body>
+</html>
