@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrCustomername = [];
+    let chose = prompt(
+        "1. Add New Customer\n" +
+        "2. Delete Customer\n"
+    );
+    switch (chose) {
+        case "1" :
+            let addi = parseInt(prompt("enter amount customer you want to add:  "));
+            for (let i = 1; i, i <= addi; i++) {
+                let a = prompt("enter customername no " + i);
+                arrCustomername.push(a);
+            }
+            arrCustomername = arrCustomername.sort();
+            let result = "";
+            for (let j = 0; j < arrCustomername.length; j++) {
+                result += "\n" + (j + 1) + ". " + arrCustomername[j];
+            }
+            alert(result);
+            break;
+        case "2" :
+            arrCustomername = ["Long", "Duc", "Linh", "Tuan", "Dao", "Hue", "Trong", "Nhat", "Minh", "Tai"];
+            let del = prompt(
+                "1. " + arrCustomername[0] + "\n" +
+                "2. " + arrCustomername[1] + "\n" +
+                "3. " + arrCustomername[2] + "\n" +
+                "4. " + arrCustomername[3] + "\n" +
+                "5. " + arrCustomername[4] + "\n" +
+                "6. " + arrCustomername[5] + "\n" +
+                "7. " + arrCustomername[6] + "\n" +
+                "8. " + arrCustomername[7] + "\n" +
+                "9. " + arrCustomername[8] + "\n" +
+                "10. " + arrCustomername[9] + "\n"
+            );
+            let total = "";
+            for (let i = 0; i < arrCustomername.length; i++) {
+                if (del == (i + 1)) {
+                    arrCustomername.splice((i), 1);
+                }
+                if (i > 8) {
+                    break;
+                }
+                total += "\n" + (i + 1) + "." + arrCustomername[i];
+            }
+            alert(total);
+            break;
+        default :
+            alert("fail!!!");
+            break;
+    }
+</script>
+</body>
+</html>
