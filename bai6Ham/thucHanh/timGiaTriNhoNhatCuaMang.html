@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = [3, 5, 7, 8, -3, -1, 9];
+    let arr2 = [7, 12, 23, 11, 3, 1, 2];
+    let arr3 = [];
+    let arr4 = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    /**
+     * ham tim gia tri nho nhat
+     * @param num
+     * @returns {*|number|number}
+     **/
+    function numbermin(num) {
+        let min = num[0];
+        let dem;
+        if (num.length === 0){
+            return -1;
+        }
+        for (let i = 1; i < num.length; i++) {
+            if (num[i] < min) {
+                min = num[i];
+                dem = i;
+            }
+        }
+        return dem;
+    }
+    let min = numbermin(arr3);
+    // hien thi ket qua neu la -1 mang rong
+    alert("vi tri chua gia tri nho nhat trong mang la: " + min);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * ham kiem tra so nguyen to
+     * @param num
+     * @returns {boolean}
+     **/
+    function isPrime(num) {
+        if (num < 2)
+            return false;
+        if (num = 2)
+            return true;
+        for (let i = 2; i < Math.sqrt(num); i++) {
+            if (num % 2 === 0)
+                return false;
+            else
+                return true;
+        }
+    }
+// kiem tra so nhap vao co phai so nguyen to khong
+    let number = prompt("enter number cheack: ");
+    if (isPrime(number)) {
+        alert(number + "is Prime");
+    } else alert(number + "is not Prime");
+</script>
+</body>
+</html>

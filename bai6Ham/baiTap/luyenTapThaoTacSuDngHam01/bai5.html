@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ["Polaris", "Aldebaran", "Dened", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arr2 = ["Ursa", "Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let string = prompt("enter star");
+
+    function checkStar(n) {
+        let check = false;
+        for (let i = 0; i < arr1.length; i++) {
+            if (n == arr1[i]) {
+                alert(arr2[i]);
+                check = true;
+            }
+        }
+        if (!check)
+            alert("not found");
+    }
+
+    let result = checkStar(string);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form><p>
+    <label>converterFeet</label>
+    <input id="inputFeet" type="number" placeholder="feet"
+           oninput="feetConverter(this.value)"/></p>
+    <p> Meter: <span id="outputMeter"></span></p>
+    <p>
+        <label>converterMeter</label>
+        <input id="inputMeter" type="number" placeholder="meter"
+               oninput="meterConverter(this.value)"/>
+    </p>
+    <p>Feet: <span id="outputFeet"></span></p>
+</form>
+<script>
+    function feetConverter(n) {
+        n = parseFloat(n);
+        document.getElementById("outputMeter").innerText = 0.305 * n;
+    }
+
+    function meterConverter(n) {
+        n = parseFloat(n);
+        document.getElementById("outputFeet").innerText = 3.279 * n;
+    }
+</script>
+</body>
+</html>
