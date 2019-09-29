@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script type="text/javascript" src="Temperature.js"></script>
+<script>
+    let result = "";
+    let temp = new Temperature();
+    temp.setdoC(25);
+    result ="do K: " + temp.doK() + " do F: " + temp.doF();
+    document.getElementById("result").innerText = result;
+</script>
+</body>
+</html>

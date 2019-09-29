@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="radius" placeholder="radius"/>
+<input type="button" value="tinh" onclick="circl()"/>
+<p id="result"></p>
+<script type="text/javascript" src="hinhtron.js"></script>
+<script>
+    let radius = document.getElementById("radius");
+    let result = "";
+    function circl() {
+        let circel = new Circle();
+        circel.setRadius(radius.value*1);
+        result = "area is"+ circel.area();
+        document.getElementById("result").innerText= result;
+    }
+</script>
+</body>
+</html>
