@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustormer = [];
+
+    /**
+     * ham them custormer
+     */
+    function addNewCustormer() {
+        let arrInfor = [];
+        let nameCustormer = prompt("enter name custormer: ");
+        let idname = prompt("enter idname: ");
+        let birthdayCustormer = prompt("enter birthday custormer: ");
+        let addressCustormer = prompt("enter address custormer: ");
+        let emailCustormer = prompt("enter email custormer: ");
+        let custormerType = prompt("enter custormer type: ");
+        let rentDays = prompt("enter rentdays: ");
+        let discount = prompt("enter discount: ");
+        let serviceType = prompt("enter service type: ");
+        let roomType = prompt("enter room type: ");
+        let quantityIncluded = prompt("enter quantity included: ");
+        arrInfor.push(nameCustormer, idname, birthdayCustormer,
+            addressCustormer, emailCustormer, custormerType, rentDays,
+            discount, serviceType, roomType, quantityIncluded);
+        arrListCustormer.push(arrInfor);
+
+        displayMainmenu();
+    }
+
+    /**
+     * ham hien thi thong ri rung khach hang
+     * @param index
+     */
+    function displayInformationCustormer(index) {
+        alert("Information: \n" +
+            "\nName:" + arrListCustormer[index][0] +
+            "\nId Name: " + arrListCustormer[index][1] +
+            "\nBirthday Customer: " + arrListCustormer[index][2] +
+            "\nAddress Customer: " + arrListCustormer[index][3] +
+            "\nEmail Customer: " + arrListCustormer[index][4] +
+            "\nCustomer type: " + arrListCustormer[index][5] +
+            "\nRent days: " + arrListCustormer[index][6] +
+            "\nDiscount: " + arrListCustormer[index][7] +
+            "\nService type: " + arrListCustormer[index][8] +
+            "\nRoom type: " + arrListCustormer[index][9] +
+            "\nQuantityIncluded: " + arrListCustormer[index][10]);
+    }
+
+    /**
+     * ham hien thi menu chon thong ti khach hang
+     */
+    function displayCustormer() {
+        let result = "";
+        for (let i = 0; i < arrListCustormer.length; i++) {
+            result += (i + 1) + ". " + "name: " + arrListCustormer[i][0] +
+                "; id name: " + arrListCustormer[i][1] + "\n";
+        }
+        let choseDisplayCustomer = parseInt(prompt(result + (arrListCustormer.length + 1)
+            + "Back to menu"));
+        if (choseDisplayCustomer !== (arrListCustormer.length + 1)) {
+            displayInformationCustormer(choseDisplayCustomer - 1);
+            displayMainmenu();
+        } else {
+            displayMainmenu();
+        }
+    }
+
+
+    function editInforCustomer(index) {
+        let choseInformation = parseInt(prompt("please chose infor want edit" +
+            "\n1.Name " + arrListCustormer[index][0] +
+            "\n2.IdName " + arrListCustormer[index][1] +
+            "\n3.Birthday " + arrListCustormer[index][2] +
+            "\n4.Address " + arrListCustormer[index][3] +
+            "\n5.Email " + arrListCustormer[index][4] +
+            "\n6.Customer type " + arrListCustormer[index][5] +
+            "\n7.Rentdays " + arrListCustormer[index][6] +
+            "\n8.Discount " + arrListCustormer[index][7] +
+            "\n9.Service Type " + arrListCustormer[index][8] +
+            "\n10.Room typr " + arrListCustormer[index][9] +
+            "\n11.Qunatity Included " + arrListCustormer[index][10] +
+            "\n12. Back."
+        ));
+        switch (choseInformation) {
+            case   1 :
+                let name = prompt("enter name want edit: ");
+                arrListCustormer[index].splice(0, 1, name);
+                break;
+            case   2 :
+                let idname = prompt("enter idname want edit: ");
+                arrListCustormer[index].splice(1, 1, idname);
+                break;
+            case   3 :
+                let address = prompt("enter address want edit: ");
+                arrListCustormer[index].splice(2, 1, address);
+                break;
+            case   4 :
+                let birthday = prompt("enter birthday want edit: ");
+                arrListCustormer[index].splice(3, 1, birthday);
+                break;
+            case   5 :
+                let email = prompt("enter email want edit: ");
+                arrListCustormer[index].splice(4, 1, email);
+                break;
+            case   6 :
+                let customerType = prompt("enter customerType want edit: ");
+                arrListCustormer[index].splice(5, 1, customerType);
+                break;
+            case   7 :
+                let rentDays = prompt("enter rentdays want edit: ");
+                arrListCustormer[index].splice(6, 1, rentDays);
+                break;
+            case   8 :
+                let discount = prompt("enter discount want edit: ");
+                arrListCustormer[index].splice(7, 1, discount);
+                break;
+            case   9 :
+                let serviceType = prompt("enter servive type want edit: ");
+                arrListCustormer[index].splice(8, 1, serviceType);
+                break;
+            case   10 :
+                let roomType = prompt("enter roomtype want edit: ");
+                arrListCustormer[index].splice(9, 1, roomType);
+                break;
+            case   11 :
+                let quantityIncluded = prompt("enter quantityIncluded want edit: ");
+                arrListCustormer[index].splice(10, 1, quantityIncluded);
+                break;
+            case   12 :
+                editCustomer();
+                break;
+            default:
+                alert("faill!!!");
+        }
+        displayInformationCustormer(index);
+    }
+
+
+    function editCustomer() {
+        let result = "";
+        for (let i = 0; i < arrListCustormer.length; i++) {
+            result += (i + 1) + ". " + "name: " + arrListCustormer[i][0] +
+                "; id name: " + arrListCustormer[i][1] + "\n";
+        }
+        let choseEditCustomer = parseInt(prompt("o" + result + (arrListCustormer.length + 1)
+            + "Back to menu"));
+        if (choseEditCustomer !== (arrListCustormer.length + 1)) {
+            editInforCustomer(choseEditCustomer - 1);
+            displayMainmenu();
+        } else {
+            displayMainmenu();
+        }
+    }
+
+
+    function deleteCustomer() {
+        let result = "";
+        for (let i = 0; i < arrListCustormer.length; i++) {
+            result += (i + 1) + ". " + "name: " + arrListCustormer[i][0] +
+                "; id name: " + arrListCustormer[i][1] + "\n";
+        }
+        let choseDeleteCustomer = parseInt(prompt("please customer want delete: \n" + result + (arrListCustormer.length + 1)
+            + "Back to menu"));
+        if (choseDeleteCustomer !== (arrListCustormer.length + 1)) {
+            let submit = prompt("\nyou sure want delete?" +
+                "\n 1. Yes" +
+                "\n 2. No");
+            switch (submit) {
+                case "1":
+                    arrListCustormer.splice(choseDeleteCustomer - 1, 1);
+
+                    displayMainmenu();
+                    break;
+                case "2":
+                    deleteCustomer();
+                    break;
+            }
+        } else displayMainmenu();
+    }
+
+    function displayMainmenu() {
+        let chose = prompt(
+            "\n1. Add New Custormer" +
+            "\n2. Display Information Custormer" +
+            "\n3. Edit Information Customer" +
+            "\n4. Delete Custormer" +
+            "\n5. Exit"
+        );
+        switch (chose) {
+            case "1":
+                addNewCustormer();
+                break;
+            case "2" :
+                displayCustormer();
+                break;
+            case "3" :
+                editCustomer();
+                break;
+            case "4" :
+                deleteCustomer();
+                break;
+            case "5" :
+                break;
+            default:
+                alert("faill!!");
+        }
+    }
+
+    displayMainmenu()
+
+</script>
+</body>
+</html>
