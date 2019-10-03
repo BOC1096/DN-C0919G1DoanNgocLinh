@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let patt = /^[0-9]{2}(?:-[0][0-9]{9})$/;
+    let phoneNumber = prompt("enter phone number");
+    if (patt.test(phoneNumber)) {
+        alert("true");
+    } else alert("false");
+</script>
+</body>
+</html>
