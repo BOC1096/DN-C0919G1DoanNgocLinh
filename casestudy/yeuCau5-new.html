@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrListCustormer = [];
+    let checkEditCustomer = false;
+    let checkDeleteCustomer = false;
+    /**
+     * ham them custormer
+     */
+    function addNewCustormer() {
+        let arrInfor = [];
+        let nameCustormer = prompt("enter name custormer: ");
+        let idname = prompt("enter idname: ");
+        let birthdayCustormer = prompt("enter birthday custormer: ");
+        let addressCustormer = prompt("enter address custormer: ");
+        let emailCustormer = prompt("enter email custormer: ");
+        let custormerType = prompt("enter custormer type: ");
+        let rentDays = prompt("enter rentdays: ");
+        let discount = prompt("enter discount: ");
+        let serviceType = prompt("enter service type: ");
+        let roomType = prompt("enter room type: ");
+        let quantityIncluded = prompt("enter quantity included: ");
+        arrInfor.push(nameCustormer);
+        arrInfor.push(idname);
+        arrInfor.push(birthdayCustormer);
+        arrInfor.push(addressCustormer);
+        arrInfor.push(emailCustormer);
+        arrInfor.push(custormerType);
+        arrInfor.push(rentDays);
+        arrInfor.push(discount);
+        arrInfor.push(serviceType);
+        arrInfor.push(roomType);
+        arrInfor.push(quantityIncluded);
+        arrListCustormer.push(arrInfor);
+
+        displayMainmenu();
+    }
+
+    /**
+     * ham hien thi thong ri rung khach hang
+     * @param index
+     */
+    function displayInformationCustormer(index) {
+        if (checkDeleteCustomer) {
+            let submit = prompt("\you sure want delete?" +
+                "\n 1. Yes" +
+                "\n 2. No");
+            switch (submit) {
+                case "1":
+                    arrListCustormer.splice(index, 1);
+                    checkDeleteCustomer = false;
+                    displayMainmenu();
+                    break;
+                case "2":
+                    checkDeleteCustomer = false;
+                    displayMainmenu();
+                    break;
+            }
+        }
+        if (checkEditCustomer) {
+            let choseInforMation = parseInt(prompt(
+                "\n1.Name:" + arrListCustormer[index][0] +
+                "\n2.Id Name: " + arrListCustormer[index][1] +
+                "\n3.Birthday Customer: " + arrListCustormer[index][2] +
+                "\n4.Address Customer: " + arrListCustormer[index][3] +
+                "\n5.Email Customer: " + arrListCustormer[index][4] +
+                "\n6.Customer type: " + arrListCustormer[index][5] +
+                "\n7.Rent days: " + arrListCustormer[index][6] +
+                "\n8.Discount: " + arrListCustormer[index][7] +
+                "\n9.Service type: " + arrListCustormer[index][8] +
+                "\n10.Room type: " + arrListCustormer[index][9] +
+                "\n11.QuantityIncluded: " + arrListCustormer[index][10] +
+                "\n12.Back"
+            ));
+            if (choseInforMation !== 12) {
+                editInformationCustormer(index, choseInforMation - 1);
+
+            } else {
+                displayCustormer();
+            }
+        } else {
+            alert("Information: \n" +
+                "\nName:" + arrListCustormer[index][0] +
+                "\nId Name: " + arrListCustormer[index][1] +
+                "\nBirthday Customer: " + arrListCustormer[index][2] +
+                "\nAddress Customer: " + arrListCustormer[index][3] +
+                "\nEmail Customer: " + arrListCustormer[index][4] +
+                "\nCustomer type: " + arrListCustormer[index][5] +
+                "\nRent days: " + arrListCustormer[index][6] +
+                "\nDiscount: " + arrListCustormer[index][7] +
+                "\nService type: " + arrListCustormer[index][8] +
+                "\nRoom type: " + arrListCustormer[index][9] +
+                "\nQuantityIncluded: " + arrListCustormer[index][10]);
+        }
+    }
+    function editInformationCustormer(indexcus, index) {
+        let inforedit = prompt("Enter infor want edit: ");
+        switch (index) {
+            case 0:
+                arrListCustormer[indexcus][0] = inforedit;
+                break;
+            case 1:
+                arrListCustormer[indexcus][1] = inforedit;
+                break;
+            case 2 :
+                arrListCustormer[indexcus][2] = inforedit;
+                break;
+            case 3 :
+                arrListCustormer[indexcus][3] = inforedit;
+                break;
+            case 4 :
+                arrListCustormer[indexcus][4] = inforedit;
+                break;
+            case 5 :
+                arrListCustormer[indexcus][5] = inforedit;
+                break;
+            case 6 :
+                arrListCustormer[indexcus][6] = inforedit;
+                break;
+            case 7 :
+                arrListCustormer[indexcus][7] = inforedit;
+                break;
+            case 8 :
+                arrListCustormer[indexcus][8] = inforedit;
+                break;
+            case 9 :
+                arrListCustormer[indexcus][9] = inforedit;
+                break;
+            case 10 :
+                arrListCustormer[indexcus][10] = inforedit;
+                break;
+
+            default:
+                alert("faill!!!");
+        }
+        console.log("1");
+        checkEditCustomer = false;
+        displayMainmenu();
+    }
+    /**
+     * ham hien thi menu chon thong tin khach hang
+     */
+    function displayCustormer() {
+        let result = "";
+        for (let i = 0; i < arrListCustormer.length; i++) {
+            result += (i + 1) + ". " + "name: " + arrListCustormer[i][0] +
+                "; id name: " + arrListCustormer[i][1] + "\n";
+        }
+        let choseDisplayCustomer = parseInt(prompt(result + (arrListCustormer.length + 1)
+            + "Back to menu"));
+        if (choseDisplayCustomer !== (arrListCustormer.length + 1)) {
+            displayInformationCustormer(choseDisplayCustomer - 1);
+            checkEditCustomer = false;
+            displayMainmenu();
+        } else {
+            checkEditCustomer = false;
+            displayMainmenu();
+        }
+    }
+        function displayMainmenu() {
+            let chose = prompt(
+                "\n1. Add New Custormer" +
+                "\n2. Display Information Custormer" +
+                "\n3. Edit Information Customer" +
+                "\n4. Delete Custormer" +
+                "\n5. Exit"
+            );
+            switch (chose) {
+                case "1":
+                    addNewCustormer();
+                    break;
+                case "2" :
+                    displayCustormer();
+                    break;
+                case "3" :
+                    choseCustomeredit();
+                    break;
+                case "4" :
+                    choseCustomerDelete();
+                    break;
+                case "5" :
+                    break;
+                default:
+                    alert("faill!!");
+            }
+        }
+
+        function choseCustomerDelete() {
+            checkDeleteCustomer = true;
+            displayCustormer();
+        }
+        function choseCustomeredit() {
+            checkEditCustomer = true;
+            displayCustormer();
+        }
+            displayMainmenu();
+
+</script>
+</body>
+</html>
