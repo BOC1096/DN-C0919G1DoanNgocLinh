@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="numberk" placeholder="kiem tra number k co nam trong mang"/>
+<input type="button" value="check" onclick="check()"/><br>
+<p id="result"></p>
+<input type="text" id="numberp" placeholder="chen number k vao mang"/>
+<input type="button" value="add" onclick="addi()"/><br>
+<p id="result2"></p>
+<script>
+    let arr = [1, 4, 5, 9, 7, 6, 3, 4, 11];
+    let total = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 !== 0) {
+            total += arr[i];
+        }
+    }
+    document.write("tong cac so le trong mang la: " + total + "<br>");
+
+    function findNumberMin(array) {
+        let min = array[0];
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+        return min;
+    }
+
+    let sortArr = [];
+    while (arr.length > 0) {
+        sortArr.push(findNumberMin(arr));
+        arr.splice(arr.indexOf(findNumberMin(arr)), 1);
+    }
+    arr = sortArr;
+    document.write("mang sap xep tang dan: " + arr);
+
+
+    function check() {
+        let k = document.getElementById("numberk");
+        for (let i = 0; i < arr.length; i++) {
+            if (k.value * 1 === arr[i]) {
+                document.getElementById("result").innerText = " number k xuat hien trong mang tai vi tri dau tien la: " + i;
+                break;
+            }
+        }
+    }
+
+    function addi() {
+        let p = document.getElementById("numberp");
+        for (let i = 0; i < arr.length; i++) {
+            if (p.value * 1 <= arr[i]) {
+                arr.splice(i, 0, p.value);
+                break;
+            } else if (p.value * 1 > arr[arr.length - 1]) {
+                arr.push(p.value);
+                break;
+            }
+        }
+        document.getElementById("result2").innerText = "mang sau khi them number p" + arr;
+    }
+</script>
+</body>
+</html>

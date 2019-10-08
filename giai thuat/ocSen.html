@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let v = parseInt(prompt("enter height tree"));
+    let up = parseInt(prompt("enter up meter"));
+    let down = parseInt(prompt("enter down meter"));
+    let buoi = 0;
+    let distance = 0;
+    if (up >= v) {
+        alert("den dinh cay chua den 1 ngay");
+
+    }
+     else if (up <= down) {
+            alert("fail");
+        }
+     else {
+            while (distance < v) {
+                distance += up;
+                buoi++;
+                if (distance >= v) {
+                    break;
+                }
+                distance = distance - down;
+                buoi++;
+            }
+            alert("so ngay leo len la: " + (buoi + 1) / 2);
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkLeapYear(index) {
+        let chiahet4 = index % 4 === 0;
+        if (chiahet4) {
+            let chiahet100 = index % 100 === 0;
+            if (chiahet100) {
+                let chiahet400 = index % 400 === 0;
+                if (chiahet400) {
+                    return true;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
+    let month = parseInt(prompt("enter month"));
+    let year = parseInt(prompt("enter year"));
+    if (month === 2) {
+        if (checkLeapYear(year)) {
+            document.write("is 29 days")
+        } else document.write("is 28 days");
+    } else if (month === 2 || month === 4 || month === 6 || month === 9 || month === 11) {
+        document.write("is 30 days");
+    } else document.write("is 31 days");
+</script>
+</body>
+</html>

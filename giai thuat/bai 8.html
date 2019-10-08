@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let num1 = parseInt(prompt("enter number 1"));
+    let num2 = parseInt(prompt("enter number 2"));
+    let imp;
+    if (num1 === 0 || num2 === 0) {
+        document.write(" 2 so khong co boi chung nho nhat<br>");
+    } else {
+        let max;
+        if (num1 > num2) {
+            max = num1;
+        } else {
+            max = num2;
+        }
+        while (true) {
+            if (max % num1 === 0 && max % num2 === 0) {
+                document.write("BSCNN la " + max + "<br>");
+                break;
+            }
+            max++;
+        }
+    }
+    if (num1 === 0 && num2 === 0) {
+        document.write("hai so 0 khong co uoc chung");
+    } else if (num1 === 0) {
+        document.write("uoc chung lon nhat la " + num2);
+    } else if (num2 === 0) {
+        document.write("uoc chung lon nhat la " + num1);
+    } else {
+        while (num2 !== 0) {
+            imp = num1 % num2;
+            num1 = num2;
+            num2 = imp;
+        }
+        document.write("uoc chung lon nhat la " + num1);
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function giaithuaLe(num) {
+        let result = 1;
+        for (let i = 1; i <= num;) {
+            result = result * i;
+            i = i + 2;
+        }
+        return result;
+    }
+
+    function giaithuaChan(num) {
+        let result = 1;
+        for (let i = 2; i <= num;) {
+            result = result * i;
+            i = i + 2;
+        }
+        return result;
+    }
+    let n = parseInt(prompt("enter number"));
+    if (n % 2 === 0) {
+        document.write(giaithuaChan(n));
+    } else document.write(giaithuaLe(n));
+</script>
+</body>
+</html>

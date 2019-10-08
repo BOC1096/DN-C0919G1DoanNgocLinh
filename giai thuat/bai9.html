@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let str = prompt("enter string");
+    let newstr = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        newstr += str.charAt(i);
+    }
+    document.write("a. "+ newstr);
+    let stringUp = str.toLocaleUpperCase();
+    document.write("<br>b. " + stringUp);
+    let stringLow = str.toLocaleLowerCase();
+    document.write("<br>c. " + stringLow);
+
+    let regexUp = /^[A-Z]$/;
+    let regexLow = /^[a-z]$/;
+    let strUpLow = str.split("");
+    for (let i = 0; i < strUpLow.length; i++) {
+        if (regexUp.test(str.charAt(i))) {
+            strUpLow[i] = str.charAt(i).toLowerCase();
+        } else strUpLow[i] = str.charAt(i).toUpperCase();
+    }
+    document.write("<br>d. " + strUpLow.join(""));
+</script>
+</body>
+</html>
