@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1b</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .block {
+            background: gray;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        #container {
+            height: 100%;
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0 100px;
+            background: whitesmoke;
+        }
+        
+        header {
+            display: flex;
+            background: gray;
+            height: 30px;
+            line-height: 30px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        
+        .banner {
+            height: 100px;
+            line-height: 100px;
+            margin: 10px 0;
+        }
+        
+        .introtextarea {
+            height: 80px;
+            line-height: 80px;
+            margin-bottom: 20px;
+        }
+        
+        .content {
+            width: 100%;
+            margin-bottom: 20px;
+            display: flex;
+        }
+        
+        .box {
+            width: 30%;
+            height: 600px;
+            line-height: 600px;
+        }
+        
+        footer {
+            clear: both;
+            height: 40px;
+            line-height: 40px;
+            background: gray;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h3>Logo</h3>
+            <p>Navigation</p>
+        </header>
+        <div class="block banner">
+            Banner/ slider
+        </div>
+        <div class="block introtextarea">
+            Intro text area
+        </div>
+        <div class="content">
+            <div class="block box">Box1</div>
+            <div class="block box" style="margin: 0 5%;">Box2</div>
+            <div class="block box">Box3</div>
+        </div>
+        <footer>
+            Footer
+        </footer>
+    </div>
+</body>
+
+</html>

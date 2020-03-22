@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .block {
+            background: gray;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        #container {
+            height: 100%;
+            width: 1000px;
+            margin: 0 auto;
+            padding: 0 100px;
+            background: whitesmoke;
+        }
+        
+        header {
+            display: flex;
+            background: gray;
+            height: 30px;
+            line-height: 30px;
+            padding: 10px;
+            justify-content: space-between;
+        }
+        
+        footer {
+            clear: both;
+            height: 40px;
+            line-height: 40px;
+            background: gray;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .content {
+            margin: 20px 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 40px;
+        }
+        
+        .content>div {
+            width: 220px;
+            height: 100px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+            line-height: 100px;
+        }
+        
+        .box {
+            width: 100%;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            grid-gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .box>div {
+            width: 320px;
+            height: 200px;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h3>Logo</h3>
+            <p>Navigation</p>
+        </header>
+        <div class="content">
+            <div class="block">1</div>
+            <div class="block">2</div>
+            <div class="block">3</div>
+            <div class="block">4</div>
+            <div class="block">5</div>
+            <div class="block">6</div>
+            <div class="block">7</div>
+            <div class="block">8</div>
+            <div class="block">9</div>
+            <div class="block">10</div>
+            <div class="block">11</div>
+            <div class="block">12</div>
+            <div class="block">13</div>
+            <div class="block">14</div>
+            <div class="block">15</div>
+            <div class="block">16</div>
+        </div>
+        <div class="box">
+            <div class="block">Box 1</div>
+            <div class="block">Box 2</div>
+            <div class="block">Box 3</div>
+        </div>
+        <footer>
+            Footer
+        </footer>
+    </div>
+</body>
+
+</html>

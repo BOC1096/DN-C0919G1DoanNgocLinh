@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        #container {
+            background-color: rgb(101, 175, 204);
+        }
+        
+        .header {
+            border-radius: 6px;
+            background-color: black;
+            padding: 15px;
+            margin: 0 2px;
+        }
+        
+        .header>a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        
+        .header>a:hover {
+            text-decoration: underline;
+            color: aqua;
+        }
+        
+        .banner {
+            display: flex;
+        }
+        
+        .image {
+            width: 40%;
+        }
+        
+        .image>img {
+            width: 100%;
+        }
+        
+        .tetx-header {
+            width: 60%;
+            box-sizing: border-box;
+            padding: 100px 0 0 100px;
+        }
+        
+        .tetx-header>a>h1,
+        .tetx-header>h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            color: darkblue;
+            text-align: center;
+        }
+        
+        .tetx-header>a>h1 {
+            font-size: 80px;
+            font-weight: lighter;
+        }
+        
+        .tetx-header>a {
+            text-decoration: none;
+        }
+        
+        .tetx-header>a :hover {
+            color: white;
+        }
+        
+        .tetx-header>h3 {
+            font-size: 30px;
+            font-weight: lighter;
+        }
+        
+        .box {
+            display: flex;
+            width: 99%;
+            margin: 15px auto;
+        }
+        
+        .item {
+            width: 33%;
+            border: 2px solid white;
+            border-radius: 4px;
+            padding: 30px 10px;
+            min-height: 350px;
+            background-color: rgb(125, 183, 201);
+        }
+        
+        .item>a>h3 {
+            font-size: 25px;
+            color: white;
+        }
+        
+        .item>a {
+            text-decoration: none;
+        }
+        
+        .item>a :hover {
+            color: darkblue;
+        }
+        
+        .item>p {
+            color: white;
+            font-weight: bold;
+        }
+        
+        .item>a+p {
+            color: darkblue;
+            font-weight: normal;
+        }
+        
+        .button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border-radius: .3rem;
+            display: inline-block;
+            text-align: center;
+            color: #000;
+            background-color: #fff;
+            margin-top: 20px;
+        }
+        
+        .button:hover {
+            background-color: rgb(125, 183, 201);
+            border: 2px solid white;
+            color: white;
+        }
+        
+        .item>img {
+            margin: 10px 0;
+            width: 99%;
+            height: 200px;
+            background-color: rgb(184, 223, 235);
+            padding: 5px;
+            box-shadow: 1px;
+        }
+        
+        #footer {
+            margin-top: 30px;
+            display: flex;
+            padding: 30px 30px;
+            border: 0;
+            /* border-top: 1px solid; */
+            /* box-shadow: 0 -2px 0 0 grey; */
+            box-shadow: 0px -1px 0px 0px #000000;
+        }
+        
+        .list {
+            width: 16%;
+            margin: 0 0.5%;
+            padding-left: 20px;
+        }
+        
+        .list>h3 {
+            color: white;
+            font-weight: bolder;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .list>p>a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .list>p>a:hover {
+            text-decoration: underline;
+            color: white;
+        }
+        
+        .list>p {
+            margin: 10px 0;
+        }
+        
+        .last-footer {
+            background-color: rgb(197, 226, 240);
+            height: 50px;
+            width: 100%;
+            display: flex;
+        }
+        
+        .last-footer-detail {
+            background-color: rgb(117, 212, 219);
+            color: cyan;
+            width: 40%;
+            height: 80%;
+            margin: auto 0;
+            padding-left: 20px;
+            border-radius: 6px;
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+        
+        .last-footer-detail>a {
+            text-decoration: none;
+            color: darkblue;
+            font-weight: bold;
+            border-right: 2px solid darkblue;
+            padding-right: 10px;
+        }
+        
+        .last-footer-detail>a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">
+            <a href="#footer">HOME</a>
+            <a href="#footer">SERVICES</a>
+            <a href="#footer">PORTFOLIO</a>
+            <a href="#footer">ABOUT US</a>
+            <a href="#footer">CONTACT US</a>
+        </div>
+        <div class="banner">
+            <div class="image">
+                <img src="/image/Social-Media-PNG-Picture.png" alt="">
+            </div>
+            <div class="tetx-header">
+                <a href="#">
+                    <h1>Are you <b>Social?</b></h1>
+                </a>
+                <h3>Need Friends, Likes, Followers, Connections?</br>
+                    Call Us TODAY for a FREE Consultation!</h3>
+            </div>
+        </div>
+        <div class="box">
+            <div class="item">
+                <a href="#">
+                    <h3>Book information</h3>
+                </a>
+                <p>Send congue, dui vel trisfique mollis</p>
+                <img src="https://nordiccoder.com/app/uploads/2019/07/5-ly-do-ban-nen-hoc-html-css.jpg" alt="">
+                <p>Duis porta quam et neque gravida vuiputate dictum mi varius. Vestibutum iaculis felis, vitae scelerisque libero euturn ac.</p>
+                <a class="button" href="#">read more» </a>
+            </div>
+            <div class="item" style="margin: 0 0.5%;">
+                <a href="#">
+                    <h3>Special Package</h3>
+                </a>
+                <p>Send congue, dui vel trisfique mollis</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSEGC0_IaqmA24UK2yKudyndpQGvK3vuLd1yh8zEGd4D3CTp-fE" alt="">
+                <p>Duis porta quam et neque gravida vuiputate dictum mi varius. Vestibutum iaculis felis, vitae scelerisque libero euturn ac.</p>
+                <a class="button" href="#">read more» </a>
+            </div>
+            <div class="item">
+                <a href="#">
+                    <h3>Applications</h3>
+                </a>
+                <p>Send congue, dui vel trisfique mollis</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQo8YNdaAXbyvhU1CajCnBL-q_ef9QbWqFoBQp2TacGBa-sUQ_s" alt="">
+                <p>Duis porta quam et neque gravida vuiputate dictum mi varius. Vestibutum iaculis felis, vitae scelerisque libero euturn ac.</p>
+                <a class="button" href="#">read more» </a>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="list" style="margin-left: 10px;">
+                <h3>About</h3>
+                <p><a href="#">Overviews</a></p>
+                <p><a href="#">Another link</a></p>
+                <p><a href="#">Our company</a></p>
+                <p><a href="#">Our staff</a></p>
+                <p><a href="#">Mission</a></p>
+                <p><a href="#">Stadment</a></p>
+            </div>
+            <div class="list">
+                <h3>Services</h3>
+                <p><a href="#">First service</a></p>
+                <p><a href="#">Second service</a></p>
+                <p><a href="#">Another service</a></p>
+                <p>
+                    <a href="#">A fourth service</a>
+                </p>
+            </div>
+            <div class="list">
+                <h3>Media</h3>
+                <p><a href="#">Image Gallery</a></p>
+                <p><a href="#">Video Gallery</a></p>
+                <p><a href="#">Audio Files</a></p>
+                <p><a href="#">The podcast</a></p>
+            </div>
+            <div class="list">
+                <h3>Blog</h3>
+                <p><a href="#">Category One</a></p>
+                <p><a href="#">Category 2</a></p>
+                <p><a href="#">Another Category/a></p>
+                <p><a href="#">Category</a></p>
+                <p><a href="#">A Fith Category</a></p>
+            </div>
+            <div class="list">
+                <h3>More Links</h3>
+                <p><a href="#">Sign Up Now</a></p>
+                <p><a href="#">We Are Hiring</a></p>
+                <p><a href="#">Tems & Conditions</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+            </div>
+            <div class="list">
+                <h3>Contact Us</h3>
+                <p><a href="#">Email Sales</a></p>
+                <p><a href="#">Email Support</a></p>
+                <p><a href="#">Phone: 555-555-3211</a></p>
+                <p><a href="#">Send Us Feedback</a></p>
+            </div>
+        </div>
+        <div class="last-footer">
+            <div class="last-footer-detail">
+                &copy;Copyright YourSiteName. All Rights Reserved: <a href="#">Home</a>
+                <a href="#">Contatc</a>
+                <a href="#"> RSS</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
