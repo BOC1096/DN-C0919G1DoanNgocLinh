@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        #container {
+            width: 90%;
+            height: 1000px;
+            margin: 0 auto;
+            position: relative;
+            font-size: 25px;
+            line-height: 50px;
+        }
+        
+        .header {
+            background-color: black;
+            color: white;
+            position: absolute;
+            height: 5%;
+            width: 30%;
+        }
+        
+        .menu {
+            background-color: red;
+            color: white;
+            position: absolute;
+            height: 5%;
+            width: 70%;
+            right: 0;
+        }
+        
+        .hero {
+            background-color: skyblue;
+            color: white;
+            position: absolute;
+            top: 5%;
+            height: 50%;
+            width: 100%;
+        }
+        
+        .main {
+            background-color: rgb(39, 34, 63);
+            color: white;
+            position: absolute;
+            top: 55%;
+            height: 30%;
+            width: 50%;
+        }
+        
+        .image {
+            background-color: powderblue;
+            color: black;
+            position: absolute;
+            top: 55%;
+            height: 15%;
+            width: 25%;
+            right: 0;
+        }
+        
+        .extra {
+            background-color: rgb(23, 73, 58);
+            color: white;
+            position: absolute;
+            top: 70%;
+            height: 15%;
+            width: 25%;
+            right: 0;
+        }
+        
+        .banner {
+            background-color: rgb(175, 136, 64);
+            color: black;
+            position: absolute;
+            bottom: 0;
+            height: 15%;
+            width: 100%;
+        }
+        
+        @media only screen and (max-width: 424px) {
+            .header,
+            .menu,
+            .hero,
+            .image,
+            .extra,
+            .main,
+            .banner {
+                width: 100%;
+                top: unset;
+                position: unset;
+                right: unset;
+            }
+        }
+        
+        @media only screen and (min-width: 425px) and (max-width: 1023px) {
+            .header {
+                width: 100%;
+            }
+            .hero {
+                height: 35%;
+            }
+            .menu {
+                height: 60%;
+                width: 20%;
+                bottom: 0;
+                right: unset;
+                left: 0;
+            }
+            .main {
+                top: 40%;
+                width: 80%;
+                height: 30%;
+                right: 0;
+            }
+            .banner {
+                width: 80%;
+                height: 15%;
+                bottom: 15%;
+                right: 0;
+            }
+            .extra {
+                width: 60%;
+                top: unset;
+                bottom: 0;
+                right: 20%;
+            }
+            .image {
+                width: 20%;
+                top: unset;
+                bottom: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="header">HEADER</div>
+        <div class="menu">MENU</div>
+        <div class="hero">HERO</div>
+        <div class="main">MAIN</div>
+        <div class="banner">BANNER</div>
+        <div class="extra">EXTRA</div>
+        <div class="image">IMAGE</div>
+    </div>
+</body>
+
+</html>
