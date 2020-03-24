@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let num;
+        let num8 = false;
+        let chan = [];
+        let le = [];
+        do {
+            num8 = false;
+            num = prompt("Nhập số nguyên ít nhất 8 chữ số");
+            (num.length < 8 || typeof Number(num) != "number") ? alert("Không hợp lệ. Vui lòng nhập lại"): num8 = true;
+        }
+        while (!num8);
+        let arrNum = num.split("");
+
+        function chanLe() {
+            let tongChan = 0;
+            let tongLe = 0;
+            for (let i = 0; i < arrNum.length; i++) {
+                arrNum[i] % 2 === 0 ? (chan.push(arrNum[i]), tongChan += arrNum[i] * 1) : (le.push(arrNum[i]), tongLe += arrNum[i] * 1);
+            }
+            alert("Mảng chẵn là: " + chan + " Tổng mảng chẵn: " + tongChan +
+                "\n Mảng lẻ là: " + le + "Tổng mảng lẻ: " + tongLe);
+        }
+
+        function rangle() {
+            let a = prompt("Vui lòng nhập khoảng từ : ");
+            let b = prompt("đến : ");
+            let result = [];
+            for (let num in arrNum) {
+                if (num * 1 > a && num * 1 < b) {
+                    result.push(num);
+                }
+            }
+            result.length != 0 ? alert("Các giá trị nằm trong khoảng từ " + a + " đến " + b + "là: " + result) : alert("không có giá trị nằm trong khoảng");
+        }
+
+        function selectionSort() {
+            let sort = arrNum;
+            for (let i = 0; i < sort.length; i++) {
+                let minInd = i;
+                for (let j = i + 1; j < sort.length; j++) {
+                    if (sort[j] < sort[minInd]) {
+                        minInd = j;
+                    }
+                }
+                let temp = sort[minInd];
+                sort[minInd] = sort[i];
+                sort[i] = temp;
+            }
+            alert("Mảng đã được sắp xếp là (Selection Sort): " + sort);
+        }
+
+
+        function insertionSort() {
+            let sort = arrNum;
+            for (let i = 1; i < sort.length; i++) {
+                let ind = i - 1;
+                let x = sort[i];
+                while (ind >= 0 && sort[ind] > x) {
+                    sort[ind + 1] = sort[ind];
+                    ind--;
+                }
+                sort[ind + 1] = x;
+            }
+            alert("Mảng đã được sắp xếp(Insertion sort)" + sort);
+        }
+
+        function merge(arr) {
+            let len = arr.length;
+            if (len < 2) {
+                return arr;
+            }
+            let mid = Math.floor(len / 2);
+            let left = arr.slice(0, mid);
+            let right = arr.slice(mid);
+            return mergeSort(merge(left), merge(right));
+        }
+
+        function mergeSort(left, right) {
+            let result = [];
+            let lenLeft = left.length;
+            let lenRight = right.length;
+            let l = 0;
+            let r = 0;
+            while (l < lenLeft && r < lenRight) {
+                if (left[l] < right[r]) {
+                    result.push(left[l++]);
+                } else {
+                    result.push(right[r++]);
+                }
+            }
+            return result.concat(left.slice(l)).concat(right.slice(r));
+        }
+        // chanLe();
+        // rangle();
+        // selectionSort();
+        // insertionSort();
+        alert("Mảng đã được sắp xếp(Merge sort)" + merge(arrNum));
+    </script>
+</body>
+
+</html>
+
+</html>
