@@ -1,0 +1,50 @@
+<form [formGroup]="formCreate" (ngSubmit)=" formCreate.valid && onSubmit(formCreate)" class="row justify-content-md-center">
+    <div class="col-md-8">
+        <div class="form-group row">
+            <label for="name" class="col-2 col-form-label">
+        Name:
+      </label>
+            <div class="col-10">
+                <input class="form-control" formControlName="name" type="text" id="name" #ten>
+            </div>
+            <p>{{ten.className}}</p>
+        </div>
+        <ng-container *ngFor="let validation of validation_messages.name">
+            <div class="alert alert-danger" *ngIf="formCreate.get('name').hasError(validation.type) && (formCreate.get('name').dirty)">
+                {{validation.message}}
+            </div>
+        </ng-container>
+        <div class="form-group row">
+            <label for="email" class="col-2 col-form-label">
+        Email:
+      </label>
+            <div class="col-10">
+                <input class="form-control" formControlName="email" type="text" id="email">
+            </div>
+        </div>
+        <ng-container *ngFor="let validation of validation_messages.email">
+            <div class="alert alert-danger" *ngIf="formCreate.get('email').hasError(validation.type) && (formCreate.get('email').dirty)">
+                {{validation.message}}
+            </div>
+        </ng-container>
+        <div class="form-group row">
+            <label for="birthday" class="col-2 col-form-label">
+        Birthday:
+      </label>
+            <div class="col-10">
+                <input class="form-control" formControlName="birthday" type="date" id="birthday">
+            </div>
+        </div>
+        <ng-container *ngFor="let validation of validation_messages.birthday">
+            <div class="alert alert-danger" *ngIf="formCreate.get('birthday').hasError(validation.type) && (formCreate.get('birthday').dirty)">
+                {{validation.message}}
+            </div>
+        </ng-container>
+        <div class="form-group row">
+            <div class="col-10 offset-2">
+                <button [disabled]="!formCreate.valid" class="btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+</form>
+{{formCreate.status | json}}

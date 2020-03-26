@@ -1,0 +1,52 @@
+{
+  "customer": [
+    {
+      "id": 1,
+      "name": "linh",
+      "email": "linh@gmail.com",
+      "birthday": "1990-12-09"
+    },
+    {
+      "id": 2,
+      "name": "linh",
+      "email": "linh1@gmail.com",
+      "birthday": "1990-12-09"
+    },
+    {
+      "id": 3,
+      "name": "linh",
+      "email": "linh2@gmail.com",
+      "birthday": "1990-12-09"
+    },
+    {
+      "id": 4,
+      "name": "linh",
+      "email": "linh3@gmail.com",
+      "birthday": "1990-12-09"
+    },
+    {
+      "name": "doan linh",
+      "birthday": "1212-02-12",
+      "email": "linh000oc@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "doan linh",
+      "birthday": "1111-03-12",
+      "email": "linh00oc@gmail.com",
+      "id": 6
+    },
+    {
+      "name": "doan linh",
+      "birthday": "1111-12-12",
+      "email": "linh0oc@gmail.com",
+      "id": 7
+    },
+    {
+      "name": "doan linh",
+      "birthday": "1111-02-01",
+      "email": "linh000boc@gmail.com",
+      "id": 8
+    }
+  ]
+}
