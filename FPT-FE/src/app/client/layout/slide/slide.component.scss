@@ -1,0 +1,26 @@
+.carousel-caption {
+    display: inline;
+    top: 0%;
+}
+
+.carousel-caption h3 {
+    color: black;
+}
+
+.carousel-caption a:hover {
+    background-color: pink;
+    border-color: black;
+    color: black;
+}
+
+.carousel {
+    border-radius: 10px;
+    width: 96%;
+    left: 2%;
+}
+
+.content {
+    background: black;
+    height: 200px;
+    width: 60%;
+}

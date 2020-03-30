@@ -1,0 +1,28 @@
+.footer {
+  padding-left: 25px;
+  border-top: solid 1px;
+  height: 270 px;
+  background: white;
+  color: black;
+  .links {
+    ul {
+      list-style-type: none;
+    }
+    li a {
+      color: black;
+      transition: color .2s;
+      &:hover {
+        text-decoration: none;
+        color: #fce4ec;
+      }
+    }
+  }
+  .location {
+    i {
+      font-size: 18px;
+    }
+  }
+  .copyright p {
+    border-top: 1px solid rgba(255, 255, 255, .1);
+  }
+}

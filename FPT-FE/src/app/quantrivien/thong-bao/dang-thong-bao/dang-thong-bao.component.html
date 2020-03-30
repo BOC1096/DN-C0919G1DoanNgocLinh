@@ -1,0 +1,35 @@
+
+<div id="contact">
+  <div class="section-content">
+    <h1 class="section-header">admin <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Đăng thông báo</span></h1>
+    <h3>===============</h3>
+  </div>
+  <div class="contact-section">
+  <div class="container">
+    <form [formGroup]="thongbaoForm" (ngSubmit)="onSubmit(thongbaoForm.value)">
+      <div class="row">
+      <div class="col-md-6 form-line">
+          <div class="form-group">
+            <label for="exampleInputUsername">Tiêu đề</label>
+            <input type="text" class="form-control" id="" placeholder=" Nhập Tiêu đề" formControlName="tieuDe">
+          </div>
+          <label for="exampleInputUsername">Người nhận:</label>
+          <div>
+          <label class="btn btn-danger">Thành viên VIP &nbsp; &nbsp; &nbsp;<input type="checkbox" class="badgebox"><span class="badge">&hearts;</span></label>
+          <br>
+        <label class="btn btn-danger">Thành viên thường<input type="checkbox" class="badgebox"><span class="badge">&hearts;</span></label>
+      </div>
+      </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for ="description"> Nội dung</label>
+             <textarea  class="form-control" id="description" placeholder="Nhập Nội dung" formControlName="noiDung"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-warning submit"><i class="fa fa-paper-plane" ></i>&nbsp; &nbsp; Gửi  &nbsp; &nbsp; &nbsp;</button>
+          </div>
+      </div>
+    </div>
+    </form>
+  </div>
+</div>

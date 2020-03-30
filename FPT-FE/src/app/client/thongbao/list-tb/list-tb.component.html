@@ -1,0 +1,23 @@
+<h1 class="text-center">Team Design Section with Pure CSS Effect</h1>
+
+
+	<div class="container">
+	<div class="row">
+
+	<div class="col-lg-4" *ngFor="let item of thongbaoList">
+	<div class="our-team-main">
+
+	<div class="team-front">
+	<img src="https://placehold.it/110x110/2196f3/fff?text=Thong%20bao" class="img-fluid" />
+	<h3>{{ item.tieuDe }}</h3>
+	<p>{{ item.thoiGianThongBao }}</p>
+	</div>
+
+	<div class="team-back">
+	<span>{{ item.noiDung }}</span>
+	</div>
+
+	</div>
+	</div>
+	</div>
+  </div>

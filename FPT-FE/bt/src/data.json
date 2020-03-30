@@ -1,0 +1,23 @@
+{
+    "computer": [{
+        "id": 1,
+        "computerId": "C001",
+        "position": "A",
+        "status": true
+    }],
+    "customer": [{
+        "id": 1,
+        "customerId": "KH00001",
+        "name": "Doan Linh",
+        "address": "Da Nang",
+        "phone": "0923123123",
+        "email": "abcde@gmail.com"
+    }],
+    "service": [{
+        "id": 1,
+        "serviceId": "DV0001",
+        "serviceName": "Sting",
+        "unit": "chai",
+        "price": 10000.00
+    }]
+}

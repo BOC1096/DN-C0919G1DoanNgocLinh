@@ -1,0 +1,73 @@
+<div class="row justify-content-between">
+    <h2 *ngIf="isSearch === false">Phản hồi</h2>
+    <h2 *ngIf="isSearch === true">Danh sách tìm kiếm</h2>
+    <div class="d-flex">
+        <p>Thời gian báo cáo từ:</p>
+        <input class="form-control" type="date" [(ngModel)]="start">
+        <p>Đến:</p>
+        <input class="form-control" type="date" [(ngModel)]="end">
+        <button class="btn btn-outline-success" (click)="search(0)">Tìm kiếm</button>
+        <button *ngIf="isSearch === true" class="btn btn-outline-danger ml-1" (click)="backToSearch()">Quay về</button>
+    </div>
+</div>
+<div class="row mt-5">
+    <div class="d-flex border rounded p-2 align-items-center" style="background: white;">
+        <h5>Hiển thị phản hồi:</h5>
+        <form [formGroup]="formRadio" (change)="start == null && end == null ? loadData(formRadio.value.isxuly,0):search(formRadio.value.isxuly,0)">
+            <div style="margin-left: 15px;" class="d-flex align-items-center">
+                <p style="margin-bottom:0">
+                    <input type="radio" id="test1" value="all" name="isxuly" formControlName="isxuly" checked>
+                    <label style="margin-right: 10px;" for="test1">Tất cả</label>
+                </p>
+                <p style="margin:0">
+                    <input type="radio" id="test2" value="done" name="isxuly" formControlName="isxuly">
+                    <label style="margin-right: 10px;" for="test2">Đã xử lý</label>
+                </p>
+                <p style="margin:0">
+                    <input type="radio" id="test3" value="dont" name="isxuly" formControlName="isxuly">
+                    <label for="test3">Chưa xử lý</label>
+                </p>
+            </div>
+        </form>
+    </div>
+    <table class="table table-hover mt-2 border rounded" style="background: white;">
+        <thead>
+            <tr>
+                <th scope="col">Thành viên gửi</th>
+                <th scope="col">Thành viên vi phạm</th>
+                <th scope="col">Nội dung</th>
+                <th scope="col">Ngày gửi</th>
+                <th scope="col">Xử lý</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let baocao of baocaos">
+            <tr [style.background]="baocao.xuLy?'white':'whitesmoke'">
+                <th scope="row">{{baocao.thanhVienBaoCao.hoTen}}</th>
+                <td *ngIf="baocao.thanhVienBiBaoCao !== null,else other_content">{{baocao.thanhVienBiBaoCao.hoTen}}</td>
+                <td *ngIf="baocao.thanhVienBiBaoCao === null">
+                    <ng-template #other_content></ng-template>
+                </td>
+                <td>{{baocao.noiDung}}</td>
+                <td>{{baocao.thoiGianBaoCao | date: 'dd/MM/yyyy'}}</td>
+                <td>Xử lý</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="row justify-content-end">
+    <nav aria-label="Page navigation example" *ngIf="baocaos.length!=0 ">
+        <ul class="pagination">
+            <li class="page-item" (click)="onFirst()"><a class="page-link">First</a></li>
+            <li class="page-item" (click)="onPrevious()" [ngClass]="pageClicked==0?'disabled':''">
+                <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item" *ngFor="let page of pages" (click)="loadData(page)" [ngClass]="pageClicked == page ? 'active' : ''">
+                <a class="page-link">{{page+1}}</a>
+            </li>
+            <li class="page-item" (click)="onNext()" [ngClass]="pageClicked==totalPages-1?'disabled':''">
+                <a class="page-link">Next</a>
+            </li>
+            <li class="page-item" (click)="onLast()"><a class="page-link">Last</a></li>
+        </ul>
+    </nav>
+</div>

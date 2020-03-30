@@ -1,0 +1,262 @@
+<!--================Header Menu Area =================-->
+<header class="header_area" [ngClass]="isLogin ? 'navbar_fixed':''">
+    <div class="main_menu">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <a class="navbar-brand logo_h" href="#"><img src="assets/image/logo/logo2.png" alt="" style="height: 50px;"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+  </button>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div *ngIf="!isLogin" class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">thông tin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login">đăng nhập</a></li>
+                        <li class="nav-item"><a class="nav-link" href="register">đăng kí</a></li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://danang.codegym.vn/">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div *ngIf="isLogin" class="collapse navbar-collapse offset" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav menu_nav ml-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#">Trang chủ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">thông tin</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login">đăng nhập</a></li>
+                        <li class="nav-item submenu dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <img src={{thanhVien.anhDaiDien}}>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item"><a class="nav-link" href="blog.html">hồ sơ</a></li>
+                                <li class="nav-item"><a class="nav-link" (click)="logout()">đăng xuất</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" target="_blank" href="https://danang.codegym.vn/">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<!--================Header Menu Area =================-->
+
+<!--================Home Banner Area =================-->
+<ng-container *ngIf="!isLogin">
+    <section class="home_banner_area">
+        <div class="box_1620">
+            <div class="banner_inner d-flex align-items-center">
+                <div class="container">
+                    <div class="banner_content text-center">
+                        <h3>Tìm một <br />người bạn?</h3>
+                        <p>"Hẹn hò 4.0" là nơi mà bạn có thể tìm được một nửa của mình hay là có thêm những người bạn mới.</p>
+                        <a class="main_btn" href="#">Đăng kí ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Banner Area =================-->
+
+    <!--================Home Blog Area =================-->
+    <section class="home_blog_area pad_top">
+        <div class="container">
+            <div class="home_blog_inner">
+                <div class="row h_blog_item">
+                    <div class="col-lg-6">
+                        <div class="h_blog_img">
+                            <img class="img-fluid" src="assets/image/home_img/img1.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h_blog_text">
+                            <div class="h_blog_text_inner left">
+                                <h4>Sẽ không <br />còn cô đơn ?</h4>
+                                <p>Nếu bạn tham gia sẽ có cơ hội có thêm những người bạn, tri kỷ hay có thể là mảnh ghép cuộc đời mà bạn hằng tìm kiếm.</p>
+                                <a class="main_btn" href="#">Tìm hiểu thêm <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row h_blog_item">
+                    <div class="col-lg-6">
+                        <div class="h_blog_text">
+                            <div class="h_blog_text_inner right">
+                                <h4>Chia sẻ<br />hình ảnh</h4>
+                                <p>Bạn có thể đăng tải những bức ảnh trong cuộc sống, khoảnh khắc hạnh phúc của mình để chia sẻ với tất cả mọi người.</p>
+                                <a class="main_btn" href="#">Tìm hiểu thêm <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h_blog_img">
+                            <img class="img-fluid" src="assets/image/home_img/img2.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row h_blog_item">
+                    <div class="col-lg-6">
+                        <div class="h_blog_img">
+                            <img class="img-fluid" src="assets/image/home_img/img3.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h_blog_text">
+                            <div class="h_blog_text_inner left">
+                                <h4>Tham gia<br />vào hội nhóm</h4>
+                                <p>Có thể tạo, tham gia vào những hội nhóm với những người có cùng sở thích, đam mê.</p>
+                                <a class="main_btn" href="#">Tìm hiểu thêm <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row h_blog_item">
+                    <div class="col-lg-6">
+                        <div class="h_blog_text">
+                            <div class="h_blog_text_inner right">
+                                <h4>Chat <br /></h4>
+                                <p>Gửi cho nhau những tin nhắn, kể cho nhau nghe những câu chuyện. Tại sao không ?</p>
+                                <a class="main_btn" href="#">Tìm hiểu thêm <span class="lnr lnr-arrow-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="h_blog_img">
+                            <img class="img-fluid" src="assets/image/home_img/img4.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Home Blog Area =================-->
+
+    <!--================Service Area =================-->
+    <section class="service_area p_120">
+        <div class="container box_1620">
+            <div class="main_title">
+                <h2>Hãy tham gia và trải nghiệm</h2>
+                <p>Nếu bạn vẫn đang tìm kiếm một nơi vui vẻ, có những người bạn hay chỉ đơn giản là tìm kiếm nửa còn lại của cuộc đời thì còn đợi gì nữa.</p>
+            </div>
+            <div class="row m0 service_inner">
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_img">
+                        <img class="img-fluid" src="assets/img/service/service-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_text">
+                        <h4>Tạo cho mình<br />bộ sưu tập hình ảnh </h4>
+                        <p>Chụp và đăng những hình ảnh mà bạn thích.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_img">
+                        <img class="img-fluid" src="assets/img/service/service-2.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_text">
+                        <h4>Đơn giản <br />có thể là những bông hoa</h4>
+                        <p>Cô gái nào mà chẳng thích hoa cơ chứ (đùa thôi).</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_text">
+                        <h4>Khoảnh khắc <br />trong cuộc sống</h4>
+                        <p>Bạn và những người khác có thể thấy hình ảnh của nhau, sẽ tìm được người mình thích.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_img">
+                        <img class="img-fluid" src="assets/img/service/service-3.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_text">
+                        <h4>Những chuyến<br />du lịch một mình</h4>
+                        <p>Bây giờ là một mình nhưng tương lai sẽ nhiều mình đấy.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 p0">
+                    <div class="service_img">
+                        <img class="img-fluid" src="assets/img/service/service-4.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Service Area =================-->
+
+    <!--================Instagram Area =================-->
+    <section class="instagram_area">
+        <div class="container box_1620">
+            <div class="insta_btn">
+                <a target="_blank" class="btn theme_btn" href="https://www.facebook.com/codegymdanang/">Theo dõi trên Facebook</a>
+            </div>
+            <div class="instagram_image row m0">
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-1.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-2.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-3.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-4.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-5.jpg" alt=""></a>
+                <a target="_blank" href="https://www.facebook.com/codegymdanang/"><img src="assets/img/instagram/ins-6.jpg" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <!--================End Instagram Area =================-->
+
+    <!--================Footer Area =================-->
+    <footer class="footer_area">
+        <div class="container">
+            <div class="row footer_inner">
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget ab_widget">
+                        <div class="f_title">
+                            <h3>About Me</h3>
+                        </div>
+                        <p></p>
+                        <p>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.facebook.com/co.xanh.3979" target="_blank">C0919G1</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
+                    </aside>
+                </div>
+                <div class="col-lg-5 col-sm-6">
+                    <aside class="f_widget news_widget">
+                        <div class="f_title">
+                            <h3>Address</h3>
+                        </div>
+                        <p>295, Nguyễn Tất Thành, Đà Nẵng</p>
+                        <p class="mb-0"><i class="fa fa-phone mr-3"></i>(+84) 123456789</p>
+                        <p><i class="fa fa-envelope-o mr-3"></i>info@codegym.com</p>
+                    </aside>
+                </div>
+                <div class="col-lg-2">
+                    <aside class="f_widget social_widget">
+                        <div class="f_title">
+                            <h3>Follow Me</h3>
+                        </div>
+                        <p>Let us be social</p>
+                        <ul class="list">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </footer>
+</ng-container>
+<ng-container *ngIf="isLogin">
+    <p>sadsadsa</p>
+</ng-container>
+<!--================End Footer Area =================-->

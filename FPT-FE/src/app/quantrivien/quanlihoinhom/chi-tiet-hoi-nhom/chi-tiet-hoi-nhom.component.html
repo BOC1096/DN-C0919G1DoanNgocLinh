@@ -1,0 +1,32 @@
+<br>
+<br>
+<div class="container">
+  <h2>Chi tiết hội nhóm</h2><br>
+  <br>
+  Admin:
+  <div class="row">
+    <div class="col-md-2">
+      <p><img class="bgImg" src="https://img.lovepik.com/element/40126/0165.png_860.png"><br><a
+          href="#">{{nhomThanhVien.hoTenAdmin}}</a>
+      </p>
+    </div>
+  </div>
+  <br>
+  Thành viên:
+
+  <div class="row">
+    <tr *ngFor="let h of nhomThanhVien.hoTenThanhVien">
+      <div class="col">
+        <!-- <p><img class="bgImg"
+            src="https://cdn5.vectorstock.com/i/1000x1000/70/59/man-flat-avatar-on-white-background-vector-15647059.jpg"><br> -->
+            <a
+            href="#">{{h}}
+          </a>
+        <!-- </p> -->
+      </div>
+    </tr>
+  </div>
+  <div class="col-3">
+    <a [routerLink]="['/admin/quan-ly-hoi-nhom/thong-tin-nhom/',hoiNhom.idHoiNhom]" class="col btn btn-pink-moon">Hoạt động hội nhóm</a>
+  </div>
+</div>

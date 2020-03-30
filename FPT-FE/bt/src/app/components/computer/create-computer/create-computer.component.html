@@ -1,0 +1,41 @@
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Thêm máy
+</button>
+
+<!-- The Modal -->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Thêm máy mới</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form action="">
+                    <div class="input-group mb-3">
+                        <label for="comId">Mã máy: <span class="text-danger"> *</span></label>
+                        <input type="text" id="comId" class="form-control">
+                        <label for="position">Vị trí <span class="text-danger"> *</span></label>
+                        <select class="custom-select" id="position" name="position">
+                        <option selected>Choose...</option>
+                        <option value="A">Hàng A</option>
+                        <option value="B">Hàng B</option>
+                        <option value="C">Hàng C</option>
+                        <option value="D">Hàng D</option>
+                      </select>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>

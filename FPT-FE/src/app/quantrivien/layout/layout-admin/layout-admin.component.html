@@ -1,0 +1,48 @@
+<div class="ad">
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-dark py-0 shadow mb-2 border-bottom " style="height: 60px ">
+        <!-- Brand -->
+        <a class="navbar-brand " href="/admin">Admin website</a>
+        <!-- Links -->
+        <ul class="navbar-nav ">
+            <li class="nav-item ">
+                <a class="nav-link " href="/admin">Trang chủ </a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="# ">Tin nhắn  <span class="badge badge-warning ">2</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link " href="# ">Thông báo  <span class="badge badge-warning ">1</span></a>
+            </li>
+
+            <!-- Dropdown -->
+
+            <li class="nav-item dropdown">
+                <a class="nav-link border-0 dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+       Tài khoản <span class="badge badge-warning">{{current}}</span>
+      </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Hồ sơ</a>
+                    <a class="dropdown-item" (click)="logout()">Đăng xuất</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="row ">
+
+        <!-- sideBar-->
+
+        <div class="col-2 " style="padding-right: 0; ">
+            <div class="list-group h-100 rounded border ">
+                <a href="# " class="b "><img src="https://i.pinimg.com/474x/7e/50/d2/7e50d232dee473b78c6db2905e3a8222.jpg " class="avatar " alt="Avatar ">Lĩnh Đoàn</a>
+                <a routerLink='quan-ly-thanh-vien' class="list-group-item list-group-item-action border-0 ">Quản lý thành viên</a>
+                <a routerLink='phan-hoi' class="list-group-item list-group-item-action border-0 ">Xem phản hồi</a>
+                <a routerLink='quan-ly-hoi-nhom' class="list-group-item list-group-item-action border-0 ">Quản lý hội nhóm</a>
+                <a routerLink='quan-ly-bai-dang' class="list-group-item list-group-item-action border-0 ">Quản lý bài đăng</a>
+                <a routerLink='dang-thong-bao' class="list-group-item list-group-item-action border-0 ">Đăng thông báo</a>
+            </div>
+        </div>
+        <div class="col-10 px-5 py-2 ">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

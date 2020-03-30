@@ -1,0 +1,54 @@
+<div class="main">
+  <div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header" >
+				<h3>Đăng nhập</h3>
+				<div class="d-flex justify-content-end social_icon">
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body" >
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="tên đăng nhập" formControlName = "username">
+					</div>
+					<div *ngIf="loginForm.get('username').invalid && loginForm.get('username').touched" style="color: red">
+						<span *ngIf="loginForm.get('username').hasError('required')">Bạn phải điền vào tên đăng nhập</span>
+						<span *ngIf="loginForm.get('username').hasError('minLength')">Tên đăng nhập ít nhất có 3 kí tự</span>
+					  </div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="mật khẩu" formControlName = "password">
+          </div>
+          <div *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched" style="color: red">
+						<span *ngIf="loginForm.get('password').hasError('required')">Bạn phải điền vào Mật khẩu</span>
+            </div>
+            <p class="text-danger text-left mt-1" *ngIf="isLoginFailed">(*) Tên đăng nhập hoặc Mật khẩu không đúng!</p>
+					<div class="row align-items-center remember">
+						<input type="checkbox">Ghi nhớ lần sau
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Đăng nhập" class="btn float-right login_btn">
+					</div>
+				</form>
+      </div>
+      <!-- <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Đăng nhập bằng Facebook</button> -->
+			<div class="card-footer">
+				<div class="d-flex justify-content-center links">
+					Bạn không có tài khoản?<a href="#">Đăng ký</a>
+				</div>
+				<div class="d-flex justify-content-center">
+					<a href="#">Quên mật khẩu?</a>
+				</div>
+			</div>
+		</div>
+  </div>
+</div>

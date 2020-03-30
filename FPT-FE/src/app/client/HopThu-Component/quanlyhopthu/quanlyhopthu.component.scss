@@ -1,0 +1,71 @@
+textarea{
+  width: 450px;
+  height: 100px;
+}
+form{
+  width: 100%;
+  height: auto;
+  background: blanchedalmond;
+  margin-top: 0px;
+border-style: ridge;
+}
+ .f-grid {
+     width: 100%;
+     height: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  flex-flow: row wrap;
+}
+
+.f-grid-col {
+  width: 100%;
+  height: 100%;
+  flex: 1 0;
+  padding: 1rem;
+}
+.f-grid-col2 {
+  width: 100%;
+  height: auto;
+  flex: 1 0;
+  background-color: white;
+  border: 1px 1px 1px 1px black;
+  padding: 1rem;
+}
+.avatar {
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+div{
+  text-align: center;
+}
+
+h1{
+
+  width: 100%;
+  display: block;
+  font-family: Poppins-Regular;
+  font-size: 30px;
+  color: #333333;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 48px;
+}
+
+input{
+  width: 80%;
+  border-radius: 5%;
+}
+
+.size{
+  width: 18px;
+  height: 18px;
+}
+button{
+  width: 200px;
+  height: 50px;
+  border-radius: round($number: 1);
+}

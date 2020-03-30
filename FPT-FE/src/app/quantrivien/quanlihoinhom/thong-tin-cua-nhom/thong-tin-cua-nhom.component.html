@@ -1,0 +1,73 @@
+<br>
+<br>
+<div class="container">
+  <h2 style="color: royalblue;">Tên hội Nhóm: {{hoiNhom.tenHoiNhom}} </h2>
+  <br>
+  <div class="col">
+    <tr *ngFor="let h of baiDangList">
+      <div class="col-5">
+        <textarea disabled class="border-dark" rows="5"
+          cols="50">{{h.thoiGianDang}}: {{h.thanhVienDang.hoTen}}:{{h.noiDung}}</textarea>
+      </div>
+    <tr>
+  </div>
+  <div class="row">
+    <div class="col-3">
+      <button data-toggle="modal" data-target="#myModalDelete" class="col btn btn-pink-moon">Hủy Nhóm</button>
+    </div>
+    <div class="col-4">
+      <button data-toggle="modal" data-target="#myModal" class="col btn btn-pink-moon">Cảnh
+        báo nhóm</button>
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Cảnh cáo hội nhóm!!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Bạn có muốn cảnh cáo hội nhóm
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="canhBaoHoiNhom()" class="btn btn-danger" data-dismiss="modal">Có</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- The Modal -->
+<div class="modal" id="myModalDelete">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Hủy Nhóm!!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        Bạn có muốn hủy Nhóm
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" (click)="deleteNhomThanhVien(hoiNhom.idHoiNhom)" class="btn btn-danger"
+          data-dismiss="modal">Có</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Không</button>
+      </div>
+
+    </div>
+  </div>
+</div>

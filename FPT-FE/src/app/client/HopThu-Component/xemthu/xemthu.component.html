@@ -1,0 +1,33 @@
+<div class="modal-dialog" role="document" style="width: 100%; height: 100%; margin: 0;">
+    <div class="modal-content" style="width: 700px;">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Thư</h5>
+        </div>
+        <div class="modal-body">
+            <form class="contact100-form">
+                <h1 class="contact100-form-title">
+                    Thư đến từ: <b style="color: rgb(95, 95, 240);">{{thu.thanhVienGui.hoTen}}</b> <br>
+                    Vào lúc: <b style="color: rgb(95, 95, 240);">{{thu.thoiGianGui| date:'dd/MM/yyyy HH:mm:ss'}}</b>
+                </h1>
+                <div class="wrap-input100 ">
+                    <label class="label-input100">Tiêu đề</label>
+                    <input id="name" class="input100" type="text" name="name" value=" {{thu.tieuDe}}" disabled>
+
+                </div>
+
+                <div class="wrap-input100 ">
+                    <label class="label-input100" for="message">Nội dung</label>
+                    <textarea id="message" class="input100" name="message" value="{{thu.noiDung}}" disabled></textarea>
+                </div>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+
+            <button type="button" class="btn btn-info btn-lg" (click)="actionFunction()">Trả lời</button>
+
+            <button type="button" class="btn btn-info btn-lg" (click)="closeModal()">Hủy</button>
+
+        </div>
+    </div>
+</div>

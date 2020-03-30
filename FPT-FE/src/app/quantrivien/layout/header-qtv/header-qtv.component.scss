@@ -1,0 +1,59 @@
+.container-fluid h2 a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: pink;
+  font-family: cursive;
+}
+
+.container {
+  background: white;
+  padding: 0;
+}
+
+.nav-item {
+  height: 100%;
+  margin: 5px;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-family: sans-serif;
+  color: black;
+}
+
+.nav-item a:hover {
+  color: pink;
+}
+
+.container-fluid {
+  padding: 0;
+  width: 100%;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.pink {
+  top: 0;
+  height: inherit;
+  background: pink;
+}
+
+.pink a {
+  color: white;
+}
+
+.pink:hover {
+  background: black;
+}
+
+div.collapse .navbar-collapse {
+  padding: 0;
+  height: 100%;
+  margin: 0;
+}
+
+ul.collapse .navbar-collapse li {
+  height: 100%;
+}

@@ -1,0 +1,34 @@
+<br>
+<br>
+<div class="container">
+  <h2>Quản lí hội nhóm</h2><br>
+  <br>
+  <table class="table table-hover mt-2 border rounded" style="background: white;">
+    <thead >
+      <tr>
+        <th>Tên hội nhóm</th>
+        <th>Ngày thành lập</th>
+        <th>Số thành viên</th>
+        <th>Số lần cảnh cáo</th>
+      </tr>
+    </thead>
+    <tbody >
+      <tr
+        *ngFor="let hn of hoiNhomList | paginate: { itemsPerPage: 10, currentPage: p }" >
+        <td>
+          <a [routerLink]="['/admin/quan-ly-hoi-nhom/',hn.idHoiNhom]">{{hn.tenHoiNhom}}</a>
+        </td>
+        <td>
+          {{hn.ngayThanhLap | date: 'dd/MM/yyyy'}}
+        </td>
+        <td>
+          {{hn.soThanhVien}}
+        </td>
+        <td>
+          {{hn.soLanCanhCao}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event" class="row justify-content-end"></pagination-controls>
+</div>
